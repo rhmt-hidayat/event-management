@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/default') ?>
 
+<?= $this->section('title') ?>
+<title>Event Management</title>
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
     <section class="section">
         <div class="section-header">

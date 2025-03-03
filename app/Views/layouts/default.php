@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Event Management</title>
+  <?= $this->renderSection('title') ?>
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="<?= base_url() ?>/stisla/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>/stisla/node_modules/@fontawesome/fontawesome-free/css/all.min.css">
