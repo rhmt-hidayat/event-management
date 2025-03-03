@@ -3,11 +3,11 @@
 <?= $this->section('content') ?>
     <section class="section">
         <div class="section-header">
-        <h1>Dashboard</h1>
+        <h1>Gawe</h1>
         </div>
 
         <div class="section-body">
-            <h2>Selamat Datang</h2>
+            <h2>Haii</h2>
         </div>
     </section>
 <?= $this->endSection() ?>
