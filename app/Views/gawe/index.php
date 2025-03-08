@@ -7,8 +7,29 @@
 <?= $this->section('content') ?>
     <section class="section">
         <div class="section-header">
-        <h1>Gawe / Acara</h1>
+            <h1>Gawe / Acara</h1>
+            <div class="section-header-button">
+                <a href="<?= site_url('gawe/add') ?>" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> Tambah</a>
+            </div>
         </div>
+
+        <!-- alert session -->
+        <?php if (session()->getFlashdata('success')) : ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?= session()->getFlashdata('success') ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <?php endif; ?>
+        <?php if (session()->getFlashdata('error')) : ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?= session()->getFlashdata('error') ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <?php endif; ?>
 
         <div class="section-body">
         <div class="card">
@@ -29,7 +50,7 @@
                 <tr>
                     <td><?= $key + 1 ?></td>
                     <td><?= $value->name_gawe ?></td>
-                    <td><?= $value->date_gawe ?></td>
+                    <td><?= date('d F Y', strtotime($value->date_gawe)); ?></td>
                     <td><?= $value->info_gawe ?></td>
                     <td class="text-center" style="width:15%">
                         <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>

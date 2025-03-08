@@ -17,3 +17,5 @@ $routes->get('create-db', function () {
 $routes->get('home', 'Home::index');
 $routes->addRedirect('/', 'home');
 $routes->get('gawe', 'Gawe::index');
+$routes->get('gawe/add', 'Gawe::create');
+$routes->post('gawe', 'Gawe::store');

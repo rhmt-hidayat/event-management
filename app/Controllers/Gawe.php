@@ -21,4 +21,29 @@ class Gawe extends BaseController
         // print_r($query->getResult());
         return view('gawe/index', $data);
     }
+
+    public function create()
+    {
+        return view('gawe/add');
+    }
+
+    public function store()
+    {
+        //Cara 1 name field sama dengan nama di database otomatis lebih cepat
+        // $data = $this->request->getPost();
+
+        //Cara 2
+        $data = $this->request->getPost(['name_gawe', 'info_gawe', 'date_gawe']);
+        //Cara 3 name spesifik
+        // $data = [
+        //     'name_gawe' => $this->request->getPost('name_gawe'),
+        //     'info_gawe' => $this->request->getPost('info_gawe'),
+        //     'date_gawe' => $this->request->getPost('date_gawe')
+        // ];
+
+        $this->db->table('gawe')->insert($data);
+        if($this->db->affectedRows() > 0) {
+            return redirect()->to(site_url('gawe'))->with('success', 'Data berhasil disimpan');
+        }
+    }
 }
