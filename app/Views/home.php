@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/default') ?>
 
 <?= $this->section('title') ?>
-<title>Event Management</title>
+<title>Dashboard</title>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
