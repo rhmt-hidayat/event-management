@@ -14,6 +14,9 @@ $routes->get('create-db', function () {
     }
 });
 
+$routes->get('login', 'Auth::index');
+$routes->post('loginProses', 'Auth::login');
+
 $routes->get('home', 'Home::index');
 $routes->addRedirect('/', 'home');
 $routes->get('gawe', 'Gawe::index');
