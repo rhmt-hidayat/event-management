@@ -21,6 +21,8 @@ $routes->get('logout', 'Auth::logout');
 $routes->get('home', 'Home::index');
 $routes->addRedirect('/', 'home');
 
+
+//CRUD cara biasa
 $routes->get('gawe', 'Gawe::index');
 $routes->get('gawe/add', 'Gawe::create');
 $routes->post('gawe', 'Gawe::store');
@@ -28,5 +30,5 @@ $routes->get('gawe/edit/(:num)', 'Gawe::edit/$1');
 $routes->put('gawe/(:any)', 'Gawe::update/$1');
 $routes->delete('gawe/(:segment)', 'Gawe::destroy/$1');
 
-//MenggunakanPresenter Routes & ResourcePresenter
+//CRUD menggunakan Presenter Routes & ResourcePresenter
 $routes->presenter('groups');

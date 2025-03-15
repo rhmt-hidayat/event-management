@@ -9,7 +9,7 @@
         <div class="section-header">
             <h1>Grup Kontak</h1>
             <div class="section-header-button">
-                <a href="<?= site_url('groups/add') ?>" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> Tambah</a>
+                <a href="<?= site_url('groups/new') ?>" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> Tambah</a>
             </div>
         </div>
 
@@ -43,6 +43,8 @@
                     <th>#</th>
                     <th>Nama</th>
                     <th>Info</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
                     <th>Action</th>
                 </tr>
                 <?php foreach ($group as $key => $value) : ?>
@@ -50,6 +52,8 @@
                     <td><?= $key + 1 ?></td>
                     <td><?= $value->name_group ?></td>
                     <td><?= $value->info_group ?></td>
+                    <td><?= date('d F Y', strtotime($value->created_at)); ?></td>
+                    <td><?= date('d F Y', strtotime($value->updated_at)); ?></td>
                     <td class="text-center" style="width:15%">
                         <a href="<?= site_url('group/edit/'.$value->id_group)?>" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
                         <form action="<?= site_url('group/'.$value->id_group) ?>" method="post" style="display:inline-block" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
